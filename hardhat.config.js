@@ -7,8 +7,8 @@ module.exports = {
   solidity: "0.8.24",
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY,
-      //neonevm: "test",
+      //sepolia: process.env.ETHERSCAN_API_KEY,
+      neonevm: "test",
     },
     customChains: [
       {

@@ -3,7 +3,7 @@ const { ethers } = require("hardhat");
 async function main() {
   const FactoryContractAt = await ethers.getContractAt(
     "FactoryContract",
-    "0x3089f71E447ec91721cEd31Be19B76BEF55CB94B"
+    "0x3089f71E447ec91721cEd31Be19B76BEF55CB94B" // Replace the factory contract address deployed
   );
 
   // Deploy a Factory Instance
