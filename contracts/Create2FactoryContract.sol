@@ -1,15 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract DeployedContract {
-    uint256 public value;
+import "./DeployedCreate2Contract.sol";
 
-    constructor(uint256 _value) {
-        value = _value;
-    }
-}
-
-contract Create2Factory {
+contract Create2FactoryContract {
     event Deployed(address addr, uint256 salt);
 
     function deploy(uint256 _salt, bytes memory bytecode) public returns (address) {
@@ -27,7 +21,7 @@ contract Create2Factory {
     }
 
     function getBytecode(uint256 _value) public pure returns (bytes memory) {
-        bytes memory bytecode = type(DeployedContract).creationCode;
+        bytes memory bytecode = type(DeployedCreate2Contract).creationCode;
         return abi.encodePacked(bytecode, abi.encode(_value));
     }
 }
